@@ -1,0 +1,60 @@
+create database easyrentdb;
+
+create table customer(
+	cid int NOT NULL AUTO_INCREMENT,
+	cname varchar(100),
+	cphone varchar(20),
+	cnic varchar(20),
+	caddress varchar(100),
+	primary Key(cid)
+);
+
+
+create table vehicle(
+	vid int NOT NULL AUTO_INCREMENT,
+	vplateno varchar(20),
+	vmodel varchar(100),
+	vtype varchar(100),
+	vyear varchar(10),
+    vcostperkm varchar(10),
+    vcostperday varchar(10),
+	primary Key(vid)
+);
+
+
+create table employee(
+	eid int NOT NULL AUTO_INCREMENT,
+	ename varchar(20),
+	eusername varchar(100),
+	epassword varchar(100),
+	ephone varchar(20),
+    eposition varchar(100),
+	primary Key(eid)
+);
+
+
+INSERT INTO employee (eid, ename, eusername, epassword, ephone, eposition )
+VALUES (0, 'admin', 'admin', 'admin', 0000, 'admin');
+
+create table driver(
+	did int NOT NULL AUTO_INCREMENT,
+	dname varchar(100),
+	dphone varchar(20),
+	dnic varchar(20),
+	daddress varchar(100),
+	primary Key(did)
+);
+
+create table rentorder(
+	rid int NOT NULL AUTO_INCREMENT,
+	rcustname varchar(100),
+	rcustphone varchar(20),
+	rvehiplateNo varchar(20),
+	rvehimodel varchar(100),
+    rdrivername varchar(100),
+    rdriverphone varchar(100),
+    rdays int,
+    rkilometers int,
+    rtotal float,
+	primary Key(rid)
+);
